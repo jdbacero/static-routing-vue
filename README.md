@@ -1,4 +1,6 @@
 # static-routing-vue
+This simple project shows Vue's routing as well as using Axios to retrieve https://jsonplaceholder.typicode.com/todos
+
 
 ## Project setup
 ```
