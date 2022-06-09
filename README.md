@@ -1,6 +1,8 @@
 # static-routing-vue
 This simple project shows Vue's routing as well as using Axios to retrieve https://jsonplaceholder.typicode.com/todos
 
+See it in action [here!](https://spa-vue-routing.onrender.com/)
+
 
 ## Project setup
 ```
