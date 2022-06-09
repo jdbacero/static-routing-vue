@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import TodoList from '../views/TodoList.vue'
 // import About from '../views/AboutView.vue'
 import TodoDetails from '@/views/TodoDetails.vue'
+import TodoRandom from '@/views/TodoRandom.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     name: 'TodoDetails',
     component: TodoDetails,
     props: true
+  },
+  {
+    path:'/todo/random',
+    name: 'TodoRandom',
+    component: TodoRandom,
   },
   {
     path: '/about',

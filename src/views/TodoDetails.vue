@@ -14,7 +14,7 @@ export default {
             todo: null
         }
     },
-    props: ['id'],
+    props: {id:null},
     created() {
         TodosService.getTodo(this.id)
         .then(response => {
