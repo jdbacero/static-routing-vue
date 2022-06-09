@@ -14,6 +14,6 @@ export default {
         return todosClient.get()
     },
     getTodo(id) {
-        return todosClient.get(`/${id}`)
+        return todosClient.get(`/${id}`).catch(err => {console.log(err)})
     }
 }

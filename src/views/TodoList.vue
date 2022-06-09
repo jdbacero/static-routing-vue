@@ -1,18 +1,48 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="todos">
+
+    <TodoCard 
+    v-for="todo in todos" 
+    :key="todo.id">
+    </TodoCard>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+import TodosService from '@/services/TodosService'
+import TodoCard from '../components/TodoCard.vue'
+
 
 export default {
   name: 'TodoList',
   components: {
-    // HelloWorld
-  }
+    TodoCard
+  },
+  data() {
+    return {
+      todos: null
+    }
+  },
+  created() {
+    TodosService.getTodos()
+    .then(response => {
+      this.todos = response.data
+      console.log(this.todos)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  },
+
 }
 </script>
+
+<style scoped>
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
