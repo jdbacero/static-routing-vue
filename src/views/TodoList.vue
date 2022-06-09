@@ -3,7 +3,8 @@
 
     <TodoCard 
     v-for="todo in todos" 
-    :key="todo.id">
+    :key="todo.id"
+    :todo="todo">
     </TodoCard>
   </div>
 </template>

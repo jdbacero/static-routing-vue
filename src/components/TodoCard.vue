@@ -1,11 +1,11 @@
 <template>
   <router-link
     class="todo-link"
-    to="/todo/10"
+    :to="{name: 'TodoDetails', params: {id: todo.id}}"
   >
     <div class="todo-card">
-      <h3>Title of Todo</h3>
-      <span>Completion status: <b>False</b></span>
+      <h3>Title: {{ todo.title }}</h3>
+      <span>Completion status: <b>{{ todo.completed }}</b></span>
     </div>
   </router-link>
 </template>
@@ -13,7 +13,10 @@
 <script>
 export default {
   props: {
-    // msg: String
+    todo: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

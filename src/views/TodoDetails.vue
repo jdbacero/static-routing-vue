@@ -1,8 +1,8 @@
 <template>
     <div v-if="todo">
         <h1>{{ todo.title }}</h1>
-
-        <p>Status: <span :class="(todo ? 'complete' : 'unfinished')">{{ todo ? "Complete" : "Unfinished" }}</span></p>
+        <hr>
+        <p>Status: <span :class="(todo.completed ? 'complete' : 'unfinished')">{{ todo.completed ? "Complete" : "Unfinished" }}</span></p>
     </div>
 </template>
 
@@ -14,8 +14,9 @@ export default {
             todo: null
         }
     },
+    props: ['id'],
     created() {
-        TodosService.getTodo(10)
+        TodosService.getTodo(this.id)
         .then(response => {
             this.todo = response.data
             console.log(response.data)
